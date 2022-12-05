@@ -41,9 +41,9 @@ public class CoinMachineTest {
   void should_get_money(){
     coinMachine.putMoneyInside("100x50");
     coinMachine.putMoneyInside("50x20");
-    coinMachine.getMoney(140);
-    assertEquals(98, coinMachine.check(50));
-    assertEquals(48, coinMachine.check(20));
+    coinMachine.getMoney(160);
+    assertEquals(97, coinMachine.check(50));
+    assertEquals(50, coinMachine.check(20));
   }
 
 }

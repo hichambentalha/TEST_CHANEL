@@ -7,20 +7,17 @@ import java.util.stream.Collectors;
 
 public class CoinMachine implements ICoinMachine {
 
-	Map<Integer, Coin> coins = new TreeMap<Integer, Coin>(Collections.reverseOrder());
+	Map<Integer, Coin> coins;
 
 	public CoinMachine() {
-	}
-
-	public void buildCoins(String strCoinMachine) {
-		String[] string = strCoinMachine.split("x");
-		coins.put(Integer.parseInt(string[1]),
-				Coin.builder().type(Integer.parseInt(string[1])).quantite(Integer.parseInt(string[0])).build());
+		coins = new TreeMap<Integer, Coin>(Collections.reverseOrder());
 	}
 
 	@Override
 	public void putMoneyInside(String strCoinMachine) {
-		buildCoins(strCoinMachine);
+		String[] string = strCoinMachine.split("x");
+		coins.put(Integer.parseInt(string[1]),
+				Coin.builder().type(Integer.parseInt(string[1])).quantite(Integer.parseInt(string[0])).build());
 	}
 
 	@Override
